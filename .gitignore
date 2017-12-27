@@ -1,0 +1,33 @@
+# Ignore everything:
+*
+
+# Except for the themes directories:
+!build.xml
+!ivy.xml
+!README.md
+!.gitignore
+
+!WebContent/
+!WebContent/*/
+!WebContent/*/*/
+!WebContent/*/*/*/
+!WebContent/WEB-INF/web.xml
+!WebContent/WEB-INF/classes/META-INF/persistence.xml
+
+!src/META-INF/
+!src/META-INF/persistence.xml
+
+!src/
+!src/*
+!src/*/
+!src/*/*
+!src/*/*/
+!src/*/*/*
+!src/*/*/*/
+!src/*/*/*/*
+!src/*/*/*/*/
+!src/*/*/*/*/*
+!src/*/*/*/*/*/
+!src/*/*/*/*/*/*
+!src/*/*/*/*/*/*/*
+!src/*/*/*/*/*/*/*/*
