@@ -1,0 +1,112 @@
+			 TEST MESSAGE: [JAX-WS RI 2.3.0 svn-revision#3528ea595bd29309f69172d231bbce272d21035c: Stub for http://introsde-assignment-3-dallator.herokuapp.com:80/person]
+
+Request #[1]: [getPersonList()] 
+	=> Result: [OK]
+	=> Response Content: [class java.util.ArrayList]
+		=> Size: [5]
+			=> Elements: [class introsde.assignment3.soap.entities.Person]
+			 TEST MESSAGE: [
+	PERSONS:
+		=> Mario Rossi
+		=> Giulio Dallatorre
+		=> Stefano Tavonatti
+		=> Pinco Pallino
+		=> Manuel Dezulian
+]
+
+Request #[2]: [getPerson(firstPersonID)] 
+	=> Result: [OK]
+	=> Response Content: [class introsde.assignment3.soap.entities.Person]
+		=> ID: [6]
+		=> First Name: [Mario]
+		=> Last Name: [Rossi]
+		=> Birthdate: [2018-01-02T14:24:36.391Z]
+
+Request #[3]: [updatePerson(firstPerson)] 
+	=> Result: [OK]
+	=> Response Content: [class introsde.assignment3.soap.entities.Person]
+		=> ID: [6]
+		=> First Name: [UPDATED NAME DURING TESTS]
+		=> Last Name: [Rossi]
+		=> Birthdate: [2018-01-02T14:24:36.391Z]
+			 TEST MESSAGE: [Changes Reverted]
+
+Request #[4]: [createPerson(generatedPerson)] 
+	=> Result: [OK]
+	=> Response Content: [class introsde.assignment3.soap.entities.Person]
+		=> ID: [11]
+		=> First Name: [Firstname]
+		=> Last Name: [L+7034899]
+		=> Birthdate: [2018-01-02T14:29:09.364Z]
+
+Request #[5]: [readPersonPreferences(generatedPerson.getId(), generatedPerson.getActivitypreference().get(0).getType().getId())] 
+	=> Result: [OK]
+	=> Response Content: [class java.util.ArrayList]
+		=> Size: [1]
+			=> Elements: [class introsde.assignment3.soap.entities.Activity]
+
+Request #[6]: [readPersonPreference(generatedPerson.getId(), generatedPerson.getActivitypreference().get(0).getId())] 
+	=> Result: [OK]
+	=> Response Content: [class introsde.assignment3.soap.entities.Activity]
+		=> ID: [12]
+		=> Name: [Dota col Tonno - generated]
+		=> Place: [A casa del Dezu - generated]
+		=> Description: [Automatically Generated]
+		=> Start Date: [2018-01-02T14:29:09.364Z]
+		=> Preference: [null]
+			=> Type: [Dota]
+
+Request #[7]: [updatePersonPreference(generatedPerson.getId(), readActivity)] 
+	=> Result: [OK]
+	=> Response Content: [class introsde.assignment3.soap.entities.Activity]
+		=> ID: [12]
+		=> Name: [New Name After Editing]
+		=> Place: [A casa del Dezu - generated]
+		=> Description: [Automatically Generated]
+		=> Start Date: [2018-01-02T14:29:09.364Z]
+		=> Preference: [null]
+			=> Type: [Dota]
+
+Request #[8]: [evaluatePersonPreference(generatedPerson.getId(), readActivity, 9)] 
+	=> Result: [OK]
+	=> Response Content: [class introsde.assignment3.soap.entities.Activity]
+		=> ID: [12]
+		=> Name: [New Name After Editing]
+		=> Place: [A casa del Dezu - generated]
+		=> Description: [Automatically Generated]
+		=> Start Date: [2018-01-02T14:29:09.364Z]
+		=> Preference: [9]
+			=> Type: [Dota]
+
+Request #[9]: [savePersonPreference(generatedPerson.getId(), activity)] 
+	=> Result: [OK]
+	=> Response Content: [class java.lang.Integer]
+
+Request #[10]: [getBestPersonPreferences(generatedPerson.getId())] 
+	=> Result: [OK]
+	=> Response Content: [class java.util.ArrayList]
+		=> Size: [1]
+			=> Elements: [class introsde.assignment3.soap.entities.Activity]
+			 TEST MESSAGE: [
+	CONTENT:
+		=> [New Name After Editing Automatically Generated] Rank: 9
+]
+
+Request #[11]: [deletePerson(generatedPerson)] 
+	=> Result: [OK]
+	=> Response Content: [class java.lang.Class]
+
+Request #[12]: [readPreferences()] 
+	=> Result: [OK]
+	=> Response Content: [class java.util.ArrayList]
+		=> Size: [6]
+			=> Elements: [class introsde.assignment3.soap.entities.Activity]
+			 TEST MESSAGE: [
+	CONTENT:
+		=> [Running -- Moving on your own power]
+		=> [Cycling -- Going on 2 wheels]
+		=> [Dancing -- Moving randomly]
+		=> [Drinking -- Getting drunk]
+		=> [DOTA -- DOTA is Life]
+		=> [Activity added -- null]
+]
