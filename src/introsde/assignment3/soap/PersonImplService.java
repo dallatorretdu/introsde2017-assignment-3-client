@@ -17,7 +17,9 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "PersonImplService", targetNamespace = "http://soap.assignment3.introsde/", wsdlLocation = "http://localhost:6901/soap/person?wsdl")
+// @WebServiceClient(name = "PersonImplService", targetNamespace = "http://soap.assignment3.introsde/", wsdlLocation = "http://localhost:6900/soap/person?wsdl")
+@WebServiceClient(name = "PersonImplService", targetNamespace = "http://soap.assignment3.introsde/", wsdlLocation = "https://introsde-assignment-3-dallator.herokuapp.com/person?wsdl")
+
 public class PersonImplService
     extends Service
 {
@@ -30,7 +32,8 @@ public class PersonImplService
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://localhost:6901/soap/person?wsdl");
+            //url = new URL("http://localhost:6900/soap/person?wsdl");
+        	url = new URL("https://introsde-assignment-3-dallator.herokuapp.com/person?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }
